@@ -32,7 +32,7 @@ namespace ServerCore
 
 
         // 이 부분은 스레드 세이프한가?
-        // 세이프하지 않음, 후에 조치
+        // 세이프함. 명시적 호출이 아니기 때문에 1번에 1개의 쓰레드만 접근
         void RegisterAccept(SocketAsyncEventArgs args)
         {
             //남아 있는 이전 연결을 초기화
