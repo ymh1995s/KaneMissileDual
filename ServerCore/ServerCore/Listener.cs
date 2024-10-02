@@ -49,7 +49,7 @@ namespace ServerCore
         // 호출되는 경우가 두 가지
         // 1. _listenSocket.AcceptAsync(args)가 true여서 나중에 알아서 이벤트로 호출됨
         // 2. _listenSocket.AcceptAsync(args)가 false(동기적으로 완료) 이면 이벤트핸들러(OnAcceptCompleted)가 호출되지 않아 '직접' 호출해야함
-        // args.Completed 는 작업이 비동기적으로 완료될 때만 호출
+        // args.Completed 콜백은 작업이 비동기적으로 완료될 때만 호출
         void OnAcceptCompleted(object sender, SocketAsyncEventArgs args)
         {
             if (args.SocketError == SocketError.Success)
