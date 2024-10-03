@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace ServerCore
 {
-    abstract class Session
+    public abstract class Session
     {
         Socket _socket;
         int _disconnected = 0; // 스레드 세이프 확인용 변수
