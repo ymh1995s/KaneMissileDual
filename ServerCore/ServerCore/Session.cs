@@ -13,16 +13,18 @@ namespace ServerCore
         Socket _socket;
         int _disconnected = 0; // 스레드 세이프 확인용 변수
 
+        RecvBuffer _recvBuffer = new RecvBuffer(1024);
+
         object _lock = new object();
         Queue<byte[]> _sendQueue = new Queue<byte[]>();
         List<ArraySegment<byte>> _pendingList = new List<ArraySegment<byte>>();
 
         // Args 전역변수로 선언하여 재사용
         SocketAsyncEventArgs _sendArgs = new SocketAsyncEventArgs();
-        SocketAsyncEventArgs recvArgs = new SocketAsyncEventArgs();
+        SocketAsyncEventArgs _recvArgs = new SocketAsyncEventArgs();
 
         public abstract void OnConnected(EndPoint endPoint);
-        public abstract void OnRecv(ArraySegment<byte> buffer);
+        public abstract int OnRecv(ArraySegment<byte> buffer);
         public abstract void OnSend(int numOfBytes);
         public abstract void OnDisconnected(EndPoint endPoint);
 
@@ -30,12 +32,14 @@ namespace ServerCore
         {
             _socket = socket;
 
-            recvArgs.Completed += new EventHandler<SocketAsyncEventArgs>(OnRecvCompleted);
-            recvArgs.SetBuffer(new byte[1024], 0, 1024);
+            _recvArgs.Completed += new EventHandler<SocketAsyncEventArgs>(OnRecvCompleted);
+            
+            // TCP 특성상 고정 오프셋 방식 변경
+            //recvArgs.SetBuffer(new byte[1024], 0, 1024);
 
             _sendArgs.Completed += new EventHandler<SocketAsyncEventArgs>(OnSendCompleted);
 
-            RegisterRecv(recvArgs);
+            RegisterRecv(_recvArgs);
         }
 
         public void Send(byte[] sendBuff)
@@ -113,6 +117,10 @@ namespace ServerCore
 
         void RegisterRecv(SocketAsyncEventArgs args)
         {
+            _recvBuffer.Clean();
+            ArraySegment<byte> segment = _recvBuffer.WriteSegment;
+            _recvArgs.SetBuffer(segment.Array, segment.Offset, segment.Count);
+
             bool pending = _socket.ReceiveAsync(args);
             if (pending == false)
                 OnRecvCompleted(null, args);
