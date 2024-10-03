@@ -3,12 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\user\\Desktop\\Unity\\KaneMissileDual\\ServerCore\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{2C6740A8-46C9-4F4C-A318-F397BBF75BC9}|ServerCore\\ServerCore.csproj|c:\\users\\user\\desktop\\unity\\kanemissiledual\\servercore\\servercore\\session.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2C6740A8-46C9-4F4C-A318-F397BBF75BC9}|ServerCore\\ServerCore.csproj|solutionrelative:servercore\\session.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2C6740A8-46C9-4F4C-A318-F397BBF75BC9}|ServerCore\\ServerCore.csproj|c:\\users\\user\\desktop\\unity\\kanemissiledual\\servercore\\servercore\\sendbuffer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2C6740A8-46C9-4F4C-A318-F397BBF75BC9}|ServerCore\\ServerCore.csproj|solutionrelative:servercore\\sendbuffer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{8CF43B4B-57C3-4456-8608-829AEAA8EE1C}|Server\\Server.csproj|c:\\users\\user\\desktop\\unity\\kanemissiledual\\servercore\\server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8CF43B4B-57C3-4456-8608-829AEAA8EE1C}|Server\\Server.csproj|solutionrelative:server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2C6740A8-46C9-4F4C-A318-F397BBF75BC9}|ServerCore\\ServerCore.csproj|c:\\users\\user\\desktop\\unity\\kanemissiledual\\servercore\\servercore\\session.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2C6740A8-46C9-4F4C-A318-F397BBF75BC9}|ServerCore\\ServerCore.csproj|solutionrelative:servercore\\session.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0B3B7C0D-D994-4AED-BF14-BB330BF0A226}|DummyClient\\DummyClient.csproj|c:\\users\\user\\desktop\\unity\\kanemissiledual\\servercore\\dummyclient\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0B3B7C0D-D994-4AED-BF14-BB330BF0A226}|DummyClient\\DummyClient.csproj|solutionrelative:dummyclient\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2C6740A8-46C9-4F4C-A318-F397BBF75BC9}|ServerCore\\ServerCore.csproj|c:\\users\\user\\desktop\\unity\\kanemissiledual\\servercore\\servercore\\recvbuffer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -17,10 +25,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{2C6740A8-46C9-4F4C-A318-F397BBF75BC9}|ServerCore\\ServerCore.csproj|c:\\users\\user\\desktop\\unity\\kanemissiledual\\servercore\\servercore\\connector.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2C6740A8-46C9-4F4C-A318-F397BBF75BC9}|ServerCore\\ServerCore.csproj|solutionrelative:servercore\\connector.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0B3B7C0D-D994-4AED-BF14-BB330BF0A226}|DummyClient\\DummyClient.csproj|c:\\users\\user\\desktop\\unity\\kanemissiledual\\servercore\\dummyclient\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0B3B7C0D-D994-4AED-BF14-BB330BF0A226}|DummyClient\\DummyClient.csproj|solutionrelative:dummyclient\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2C6740A8-46C9-4F4C-A318-F397BBF75BC9}|ServerCore\\ServerCore.csproj|c:\\users\\user\\desktop\\unity\\kanemissiledual\\servercore\\servercore\\listener.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -38,11 +42,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
+              "Title": "SendBuffer.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\Unity\\KaneMissileDual\\ServerCore\\ServerCore\\SendBuffer.cs",
+              "RelativeDocumentMoniker": "ServerCore\\SendBuffer.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\Unity\\KaneMissileDual\\ServerCore\\ServerCore\\SendBuffer.cs",
+              "RelativeToolTip": "ServerCore\\SendBuffer.cs",
+              "ViewState": "AQIAAA0AAAAAAAAAAAAowB0AAAA3AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-03T19:34:05.803Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "RecvBuffer.cs",
               "DocumentMoniker": "C:\\Users\\user\\Desktop\\Unity\\KaneMissileDual\\ServerCore\\ServerCore\\RecvBuffer.cs",
               "RelativeDocumentMoniker": "ServerCore\\RecvBuffer.cs",
@@ -61,27 +78,27 @@
               "RelativeDocumentMoniker": "Server\\Program.cs",
               "ToolTip": "C:\\Users\\user\\Desktop\\Unity\\KaneMissileDual\\ServerCore\\Server\\Program.cs",
               "RelativeToolTip": "Server\\Program.cs",
-              "ViewState": "AQIAABEAAAAAAAAAAAAQwB8AAAAcAAAA",
+              "ViewState": "AQIAABQAAAAAAAAAAAAowCIAAAA8AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-03T17:03:00.843Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\user\\Desktop\\Unity\\KaneMissileDual\\ServerCore\\DummyClient\\Program.cs",
               "RelativeDocumentMoniker": "DummyClient\\Program.cs",
               "ToolTip": "C:\\Users\\user\\Desktop\\Unity\\KaneMissileDual\\ServerCore\\DummyClient\\Program.cs",
               "RelativeToolTip": "DummyClient\\Program.cs",
-              "ViewState": "AQIAACkAAAAAAAAAAAA2wDUAAAAbAAAA",
+              "ViewState": "AQIAAAUAAAAAAAAAAAAQwBAAAABNAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-03T17:01:19.186Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "Connector.cs",
               "DocumentMoniker": "C:\\Users\\user\\Desktop\\Unity\\KaneMissileDual\\ServerCore\\ServerCore\\Connector.cs",
               "RelativeDocumentMoniker": "ServerCore\\Connector.cs",
@@ -94,7 +111,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "ServerCore",
               "DocumentMoniker": "C:\\Users\\user\\Desktop\\Unity\\KaneMissileDual\\ServerCore\\ServerCore\\ServerCore.csproj",
               "RelativeDocumentMoniker": "ServerCore\\ServerCore.csproj",
@@ -106,7 +123,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "Listener.cs",
               "DocumentMoniker": "C:\\Users\\user\\Desktop\\Unity\\KaneMissileDual\\ServerCore\\ServerCore\\Listener.cs",
               "RelativeDocumentMoniker": "ServerCore\\Listener.cs",
@@ -119,13 +136,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "Session.cs",
               "DocumentMoniker": "C:\\Users\\user\\Desktop\\Unity\\KaneMissileDual\\ServerCore\\ServerCore\\Session.cs",
               "RelativeDocumentMoniker": "ServerCore\\Session.cs",
               "ToolTip": "C:\\Users\\user\\Desktop\\Unity\\KaneMissileDual\\ServerCore\\ServerCore\\Session.cs",
               "RelativeToolTip": "ServerCore\\Session.cs",
-              "ViewState": "AQIAAAwAAAAAAAAAAAAQwBIAAAA3AAAA",
+              "ViewState": "AQIAAB4AAAAAAAAAAAAowCgAAAAWAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-02T20:38:15.885Z",
               "EditorCaption": ""

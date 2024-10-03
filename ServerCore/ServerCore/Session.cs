@@ -16,7 +16,7 @@ namespace ServerCore
         RecvBuffer _recvBuffer = new RecvBuffer(1024);
 
         object _lock = new object();
-        Queue<byte[]> _sendQueue = new Queue<byte[]>();
+        Queue<ArraySegment<byte>> _sendQueue = new Queue<ArraySegment<byte>>();
         List<ArraySegment<byte>> _pendingList = new List<ArraySegment<byte>>();
 
         // Args 전역변수로 선언하여 재사용
@@ -33,16 +33,12 @@ namespace ServerCore
             _socket = socket;
 
             _recvArgs.Completed += new EventHandler<SocketAsyncEventArgs>(OnRecvCompleted);
-            
-            // TCP 특성상 고정 오프셋 방식 변경
-            //recvArgs.SetBuffer(new byte[1024], 0, 1024);
-
             _sendArgs.Completed += new EventHandler<SocketAsyncEventArgs>(OnSendCompleted);
 
             RegisterRecv(_recvArgs);
         }
 
-        public void Send(byte[] sendBuff)
+        public void Send(ArraySegment<byte> sendBuff)
         {
             lock (_lock)
             {
@@ -68,8 +64,8 @@ namespace ServerCore
         {
             while (_sendQueue.Count > 0)
             {
-                byte[] buff = _sendQueue.Dequeue();
-                _pendingList.Add(new ArraySegment<byte>(buff, 0, buff.Length));
+                ArraySegment<byte> buff = _sendQueue.Dequeue();
+                _pendingList.Add(buff);
             }
 
             _sendArgs.BufferList = _pendingList;
@@ -137,7 +133,28 @@ namespace ServerCore
                 //TODO
                 try
                 {
-                    OnRecv(new ArraySegment<byte>(args.Buffer, args.Offset, args.BytesTransferred));
+                    //write 커서 이동
+                    if (_recvBuffer.OnWrite(args.BytesTransferred) == false)
+                    {
+                        Disconnect();
+                        return;
+                    }
+
+                    // 콘텐츠 쪽으로 데이터를 넘겨주고 얼마나 처리했는지 받는다.
+                    int processLen = OnRecv(_recvBuffer.ReadSegment);
+                    if (processLen < 0 || _recvBuffer.DataSize < processLen)
+                    {
+                        Disconnect();
+                        return;
+                    }
+
+                    //Read 커서 이동
+                    if (_recvBuffer.OnRead(processLen) == false)
+                    {
+                        Disconnect();
+                        return;
+                    }
+
                     // 정상적으로 Recv 되었으면 재등록
                     RegisterRecv(args);
                 }
@@ -148,7 +165,7 @@ namespace ServerCore
             }
             else
             {
-                OnRecv(new ArraySegment<byte>(args.Buffer, args.Offset, args.BytesTransferred));
+                Disconnect();
             }
         }
         #endregion 네트워크 통신
