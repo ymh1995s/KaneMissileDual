@@ -11,12 +11,13 @@ namespace ServerCore
     internal class Listener
     {
         Socket _listenSocket;
-        Action<Socket> _onAcceptHandler; //Accept 완로 후 행동
+        Func<Session> _sessionFactory; //Accept 완로 후 행동 -> 세션을 리턴한다.
 
-        public void Init(IPEndPoint endPoint, Action<Socket> onAcceptHandler)
+        // 콜백 세션을 리턴해주기 위해 Action > Func로 변경
+        public void Init(IPEndPoint endPoint, Func<Session> sessionFactory)
         {
             _listenSocket = new Socket(endPoint.AddressFamily, SocketType.Stream, ProtocolType.Tcp);
-            _onAcceptHandler += onAcceptHandler;
+            _sessionFactory += sessionFactory;
 
             _listenSocket.Bind(endPoint);
 
@@ -54,9 +55,11 @@ namespace ServerCore
         {
             if (args.SocketError == SocketError.Success)
             {
-                // Accept 완료 후 행동
-                // 리스너를 호출하는 부분의 함수 인자(Action)가 여기까지 왔음
-                _onAcceptHandler.Invoke(args.AcceptSocket);
+                // Accept 완료 후 행동 => Session 리턴
+
+                Session session = _sessionFactory.Invoke();
+                session.Start(args.AcceptSocket);
+                session.OnConnected(args.AcceptSocket.RemoteEndPoint);
             }
             else
             {
