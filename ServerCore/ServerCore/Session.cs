@@ -14,16 +14,16 @@ namespace ServerCore
 
         object _lock = new object();
         Queue<byte[]> _sendQueue = new Queue<byte[]>();
-        bool _pending = false;
-        // _sendArgs 전역변수로 선언하여 재사용
+        List<ArraySegment<byte>> _pendingList = new List<ArraySegment<byte>>();
+
+        // Args 전역변수로 선언하여 재사용
         SocketAsyncEventArgs _sendArgs = new SocketAsyncEventArgs();
+        SocketAsyncEventArgs recvArgs = new SocketAsyncEventArgs();
 
         public void Start(Socket socket)
         {
             _socket = socket;
 
-            // recvArgs를 1회만 선언 후, 예약 하여 재사용
-            SocketAsyncEventArgs recvArgs = new SocketAsyncEventArgs();
             recvArgs.Completed += new EventHandler<SocketAsyncEventArgs>(OnRecvCompleted);
             recvArgs.SetBuffer(new byte[1024], 0, 1024);
 
@@ -37,7 +37,7 @@ namespace ServerCore
             lock (_lock)
             {
                 _sendQueue.Enqueue(sendBuff);
-                if (!_pending)
+                if (_pendingList.Count == 0)
                     RegisterSend();
             }
         }
@@ -55,9 +55,13 @@ namespace ServerCore
         #region 네트워크 통신
         void RegisterSend()
         {
-            _pending = true;
-            byte[] buff = _sendQueue.Dequeue();
-            _sendArgs.SetBuffer(buff, 0, buff.Length);
+            while (_sendQueue.Count > 0)
+            {
+                byte[] buff = _sendQueue.Dequeue();
+                _pendingList.Add(new ArraySegment<byte>(buff, 0, buff.Length));
+            }
+
+            _sendArgs.BufferList = _pendingList;
 
             bool pending = _socket.SendAsync(_sendArgs);
             if (pending == false)
@@ -73,11 +77,20 @@ namespace ServerCore
                 {
                     try
                     {
-                        if (_sendQueue.Count > 0)
-                            RegisterSend();
-                        else
-                            _pending = false;
-                        // RegisterSend(args); //이미 보낸 데이터 args를 재사용 할 수 없음재
+                        try
+                        {
+                            _sendArgs.BufferList = null;
+                            _pendingList.Clear();
+
+                            Console.WriteLine($"Transferred bytes: {_sendArgs.BytesTransferred}");
+
+                            if (_sendQueue.Count > 0)
+                                RegisterSend();
+                        }
+                        catch (Exception e)
+                        {
+                            Console.WriteLine($"OnSendCompleted Failed {e}");
+                        }
                     }
                     catch (Exception e)
                     {
