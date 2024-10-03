@@ -12,29 +12,18 @@ using static System.Collections.Specialized.BitVector32;
 
 namespace Server
 {
-    class Test
+    class Packet
     {
-        public int hp;
-        public int attack;
-        public string name;
-        public List<int> skills = new List<int>();
+        public ushort size;
+        public ushort packetId;
     }
 
-    class GameSession : Session
+    class GameSession : PacketSession
     {
         public override void OnConnected(EndPoint endPoint)
         {
             Console.WriteLine($"OnConnected bytes : {endPoint}");
 
-            Test test = new Test() { hp = 100, attack = 10 };
-            ArraySegment<byte> openSegment = SendBufferHelper.Open(4096);
-            byte[] buffer = BitConverter.GetBytes(test.hp);
-            byte[] buffer2 = BitConverter.GetBytes(test.attack);
-            Array.Copy(buffer, 0, openSegment.Array, openSegment.Offset, buffer.Length);
-            Array.Copy(buffer2, 0, openSegment.Array, openSegment.Offset + buffer.Length, buffer2.Length);
-            ArraySegment<byte> sendBuff = SendBufferHelper.Close(buffer.Length + buffer2.Length);
-
-            Send(sendBuff);
             Thread.Sleep(1000);
             Disconnect();
         }
@@ -44,11 +33,12 @@ namespace Server
             Console.WriteLine($"OnDisconnected bytes : {endPoint}");
         }
 
-        public override int OnRecv(ArraySegment<byte> buffer)
+        public override void OnRecvPacket(ArraySegment<byte> buffer)
         {
-            string recvData = Encoding.UTF8.GetString(buffer.Array, buffer.Offset, buffer.Count);
-            Console.WriteLine($"[From client] {recvData}");
-            return buffer.Count;
+            // [size(2)][packetid(2)][detail...]
+            ushort size = BitConverter.ToUInt16(buffer.Array, buffer.Offset);
+            ushort id = BitConverter.ToUInt16(buffer.Array, buffer.Offset + 2);
+            Console.WriteLine($"RecvPacket Id: {id}, Size {size}");
         }
 
         public override void OnSend(int numOfBytes)
