@@ -3,36 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\user\\Desktop\\Unity\\KaneMissileDual\\ServerCore\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{8CF43B4B-57C3-4456-8608-829AEAA8EE1C}|Server\\Server.csproj|c:\\users\\user\\desktop\\unity\\kanemissiledual\\servercore\\server\\clientsession.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8CF43B4B-57C3-4456-8608-829AEAA8EE1C}|Server\\Server.csproj|solutionrelative:server\\clientsession.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{8CF43B4B-57C3-4456-8608-829AEAA8EE1C}|Server\\Server.csproj|c:\\users\\user\\desktop\\unity\\kanemissiledual\\servercore\\server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8CF43B4B-57C3-4456-8608-829AEAA8EE1C}|Server\\Server.csproj|solutionrelative:server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2C6740A8-46C9-4F4C-A318-F397BBF75BC9}|ServerCore\\ServerCore.csproj|c:\\users\\user\\desktop\\unity\\kanemissiledual\\servercore\\servercore\\session.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2C6740A8-46C9-4F4C-A318-F397BBF75BC9}|ServerCore\\ServerCore.csproj|solutionrelative:servercore\\session.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0B3B7C0D-D994-4AED-BF14-BB330BF0A226}|DummyClient\\DummyClient.csproj|c:\\users\\user\\desktop\\unity\\kanemissiledual\\servercore\\dummyclient\\serversession.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0B3B7C0D-D994-4AED-BF14-BB330BF0A226}|DummyClient\\DummyClient.csproj|solutionrelative:dummyclient\\serversession.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0B3B7C0D-D994-4AED-BF14-BB330BF0A226}|DummyClient\\DummyClient.csproj|c:\\users\\user\\desktop\\unity\\kanemissiledual\\servercore\\dummyclient\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0B3B7C0D-D994-4AED-BF14-BB330BF0A226}|DummyClient\\DummyClient.csproj|solutionrelative:dummyclient\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2C6740A8-46C9-4F4C-A318-F397BBF75BC9}|ServerCore\\ServerCore.csproj|c:\\users\\user\\desktop\\unity\\kanemissiledual\\servercore\\servercore\\sendbuffer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2C6740A8-46C9-4F4C-A318-F397BBF75BC9}|ServerCore\\ServerCore.csproj|solutionrelative:servercore\\sendbuffer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2C6740A8-46C9-4F4C-A318-F397BBF75BC9}|ServerCore\\ServerCore.csproj|c:\\users\\user\\desktop\\unity\\kanemissiledual\\servercore\\servercore\\recvbuffer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2C6740A8-46C9-4F4C-A318-F397BBF75BC9}|ServerCore\\ServerCore.csproj|solutionrelative:servercore\\recvbuffer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2C6740A8-46C9-4F4C-A318-F397BBF75BC9}|ServerCore\\ServerCore.csproj|c:\\users\\user\\desktop\\unity\\kanemissiledual\\servercore\\servercore\\connector.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2C6740A8-46C9-4F4C-A318-F397BBF75BC9}|ServerCore\\ServerCore.csproj|solutionrelative:servercore\\connector.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2C6740A8-46C9-4F4C-A318-F397BBF75BC9}|ServerCore\\ServerCore.csproj|c:\\users\\user\\desktop\\unity\\kanemissiledual\\servercore\\servercore\\listener.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2C6740A8-46C9-4F4C-A318-F397BBF75BC9}|ServerCore\\ServerCore.csproj|solutionrelative:servercore\\listener.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2C6740A8-46C9-4F4C-A318-F397BBF75BC9}|ServerCore\\ServerCore.csproj|c:\\users\\user\\desktop\\unity\\kanemissiledual\\servercore\\servercore\\servercore.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
-      "RelativeMoniker": "D:0:0:{2C6740A8-46C9-4F4C-A318-F397BBF75BC9}|ServerCore\\ServerCore.csproj|solutionrelative:servercore\\servercore.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
     }
   ],
   "DocumentGroupContainers": [
@@ -42,109 +26,58 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "SendBuffer.cs",
-              "DocumentMoniker": "C:\\Users\\user\\Desktop\\Unity\\KaneMissileDual\\ServerCore\\ServerCore\\SendBuffer.cs",
-              "RelativeDocumentMoniker": "ServerCore\\SendBuffer.cs",
-              "ToolTip": "C:\\Users\\user\\Desktop\\Unity\\KaneMissileDual\\ServerCore\\ServerCore\\SendBuffer.cs",
-              "RelativeToolTip": "ServerCore\\SendBuffer.cs",
-              "ViewState": "AQIAAA8AAAAAAAAAAAAqwB4AAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-03T19:34:05.803Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "RecvBuffer.cs",
-              "DocumentMoniker": "C:\\Users\\user\\Desktop\\Unity\\KaneMissileDual\\ServerCore\\ServerCore\\RecvBuffer.cs",
-              "RelativeDocumentMoniker": "ServerCore\\RecvBuffer.cs",
-              "ToolTip": "C:\\Users\\user\\Desktop\\Unity\\KaneMissileDual\\ServerCore\\ServerCore\\RecvBuffer.cs",
-              "RelativeToolTip": "ServerCore\\RecvBuffer.cs",
-              "ViewState": "AQIAAAgAAAAAAAAAAAAwwBwAAAAuAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-03T18:05:04.141Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\user\\Desktop\\Unity\\KaneMissileDual\\ServerCore\\Server\\Program.cs",
-              "RelativeDocumentMoniker": "Server\\Program.cs",
-              "ToolTip": "C:\\Users\\user\\Desktop\\Unity\\KaneMissileDual\\ServerCore\\Server\\Program.cs",
-              "RelativeToolTip": "Server\\Program.cs",
-              "ViewState": "AQIAACgAAAAAAAAAAAAUwEAAAABKAAAA",
+              "Title": "ClientSession.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\Unity\\KaneMissileDual\\ServerCore\\Server\\ClientSession.cs",
+              "RelativeDocumentMoniker": "Server\\ClientSession.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\Unity\\KaneMissileDual\\ServerCore\\Server\\ClientSession.cs*",
+              "RelativeToolTip": "Server\\ClientSession.cs*",
+              "ViewState": "AQIAADIAAAAAAAAAAAAowEsAAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-03T17:03:00.843Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\user\\Desktop\\Unity\\KaneMissileDual\\ServerCore\\DummyClient\\Program.cs",
-              "RelativeDocumentMoniker": "DummyClient\\Program.cs",
-              "ToolTip": "C:\\Users\\user\\Desktop\\Unity\\KaneMissileDual\\ServerCore\\DummyClient\\Program.cs",
-              "RelativeToolTip": "DummyClient\\Program.cs",
-              "ViewState": "AQIAAD0AAAAAAAAAAAAgwCsAAAA7AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-03T17:01:19.186Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Connector.cs",
-              "DocumentMoniker": "C:\\Users\\user\\Desktop\\Unity\\KaneMissileDual\\ServerCore\\ServerCore\\Connector.cs",
-              "RelativeDocumentMoniker": "ServerCore\\Connector.cs",
-              "ToolTip": "C:\\Users\\user\\Desktop\\Unity\\KaneMissileDual\\ServerCore\\ServerCore\\Connector.cs",
-              "RelativeToolTip": "ServerCore\\Connector.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAACwAAAAYAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-03T16:57:18.046Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "ServerCore",
-              "DocumentMoniker": "C:\\Users\\user\\Desktop\\Unity\\KaneMissileDual\\ServerCore\\ServerCore\\ServerCore.csproj",
-              "RelativeDocumentMoniker": "ServerCore\\ServerCore.csproj",
-              "ToolTip": "C:\\Users\\user\\Desktop\\Unity\\KaneMissileDual\\ServerCore\\ServerCore\\ServerCore.csproj",
-              "RelativeToolTip": "ServerCore\\ServerCore.csproj",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-10-03T16:56:39.564Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Listener.cs",
-              "DocumentMoniker": "C:\\Users\\user\\Desktop\\Unity\\KaneMissileDual\\ServerCore\\ServerCore\\Listener.cs",
-              "RelativeDocumentMoniker": "ServerCore\\Listener.cs",
-              "ToolTip": "C:\\Users\\user\\Desktop\\Unity\\KaneMissileDual\\ServerCore\\ServerCore\\Listener.cs",
-              "RelativeToolTip": "ServerCore\\Listener.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAADwAAAAYAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-02T20:43:01.315Z",
+              "WhenOpened": "2024-10-05T08:10:05.107Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Session.cs",
-              "DocumentMoniker": "C:\\Users\\user\\Desktop\\Unity\\KaneMissileDual\\ServerCore\\ServerCore\\Session.cs",
-              "RelativeDocumentMoniker": "ServerCore\\Session.cs",
-              "ToolTip": "C:\\Users\\user\\Desktop\\Unity\\KaneMissileDual\\ServerCore\\ServerCore\\Session.cs*",
-              "RelativeToolTip": "ServerCore\\Session.cs*",
-              "ViewState": "AQIAAEEAAAAAAAAAAAAUwEYAAAAZAAAA",
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\Unity\\KaneMissileDual\\ServerCore\\Server\\Program.cs",
+              "RelativeDocumentMoniker": "Server\\Program.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\Unity\\KaneMissileDual\\ServerCore\\Server\\Program.cs",
+              "RelativeToolTip": "Server\\Program.cs",
+              "ViewState": "AQIAAAwAAAAAAAAAAADwvyEAAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-02T20:38:15.885Z",
+              "WhenOpened": "2024-10-05T08:08:59.476Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ServerSession.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\Unity\\KaneMissileDual\\ServerCore\\DummyClient\\ServerSession.cs",
+              "RelativeDocumentMoniker": "DummyClient\\ServerSession.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\Unity\\KaneMissileDual\\ServerCore\\DummyClient\\ServerSession.cs*",
+              "RelativeToolTip": "DummyClient\\ServerSession.cs*",
+              "ViewState": "AQIAAEUAAAAAAAAAAAAYwCwAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-05T07:45:48.796Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\Unity\\KaneMissileDual\\ServerCore\\DummyClient\\Program.cs",
+              "RelativeDocumentMoniker": "DummyClient\\Program.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\Unity\\KaneMissileDual\\ServerCore\\DummyClient\\Program.cs",
+              "RelativeToolTip": "DummyClient\\Program.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAABwAAAARAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-05T07:44:01.312Z",
               "EditorCaption": ""
             }
           ]

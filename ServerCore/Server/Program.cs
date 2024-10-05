@@ -12,41 +12,6 @@ using static System.Collections.Specialized.BitVector32;
 
 namespace Server
 {
-    class Packet
-    {
-        public ushort size;
-        public ushort packetId;
-    }
-
-    class GameSession : PacketSession
-    {
-        public override void OnConnected(EndPoint endPoint)
-        {
-            Console.WriteLine($"OnConnected bytes : {endPoint}");
-
-            Thread.Sleep(1000);
-            Disconnect();
-        }
-
-        public override void OnDisconnected(EndPoint endPoint)
-        {
-            Console.WriteLine($"OnDisconnected bytes : {endPoint}");
-        }
-
-        public override void OnRecvPacket(ArraySegment<byte> buffer)
-        {
-            // [size(2)][packetid(2)][detail...]
-            ushort size = BitConverter.ToUInt16(buffer.Array, buffer.Offset);
-            ushort id = BitConverter.ToUInt16(buffer.Array, buffer.Offset + 2);
-            Console.WriteLine($"RecvPacket Id: {id}, Size {size}");
-        }
-
-        public override void OnSend(int numOfBytes)
-        {
-            Console.WriteLine($"Transferred bytes: {numOfBytes}");
-        }
-    }
-
     class Program
     {
         static Listener _listener = new Listener();
@@ -62,7 +27,7 @@ namespace Server
             IPEndPoint endPoint = new IPEndPoint(ipAddr, 7777);
 
             //어떤 종류의 세션을 만들어줄지 지정 => 여기서는 GameSession
-            _listener.Init(endPoint, () => { return new GameSession(); });
+            _listener.Init(endPoint, () => { return new ClientSession(); });
             Console.WriteLine(" Listening..");
 
             while (true)
