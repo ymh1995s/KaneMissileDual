@@ -9,23 +9,63 @@ using System.Threading.Tasks;
 namespace DummyClient
 {
     // 직접 패킷을 설꼐하고 구현한다.
-    class Packet
+    abstract class Packet
     {
         public ushort size;
         public ushort packetId;
+
+        //직렬화
+        public abstract ArraySegment<byte> Write();
+        //역직렬화
+        public abstract void Read(ArraySegment<byte> s);
     }
 
     //클라-> 서버
     class PlayerInfoReq : Packet
     {
         public long playerId;
-    }
 
-    //서버-> 클라
-    class PlayerInfoOk : Packet
-    {
-        public int hp;
-        public int attack;
+        public PlayerInfoReq()
+        {
+            this.packetId = (ushort)PacketID.PlayerInfoReq;
+        }
+
+        public override void Read(ArraySegment<byte> s)
+        {
+            // [size(2)][packetid(2)][detail...]
+            ushort count = 0;
+
+            //ushort size = BitConverter.ToUInt16(s.Array, s.Offset + count);
+            count += 2;
+            //ushort id = BitConverter.ToUInt16(s.Array, s.Offset + count);
+            count += 2;
+
+            //this.playerId = BitConverter.ToInt64(s.Array, s.Offset + count);
+            // ReadOnlySpan으로 변조 확인
+            this.playerId = BitConverter.ToInt64(new ReadOnlySpan<byte>(s.Array, s.Offset + count, s.Count - count));
+            count += 8;
+        }
+
+        public override ArraySegment<byte> Write()
+        {
+            ArraySegment<byte> s = SendBufferHelper.Open(4096);
+
+            ushort count = 0;
+            bool success = true;
+
+            count += 2;
+            success &= BitConverter.TryWriteBytes(new Span<byte>(s.Array, s.Offset + count, s.Count - count), this.packetId);
+            count += 2;
+            success &= BitConverter.TryWriteBytes(new Span<byte>(s.Array, s.Offset + count, s.Count - count), this.playerId);
+            count += 8;
+
+            success &= BitConverter.TryWriteBytes(new Span<byte>(s.Array, s.Offset, s.Count), count);
+
+            if (success == false)
+                return null;
+
+            return SendBufferHelper.Close(count);
+        }
     }
 
     public enum PacketID
@@ -40,31 +80,13 @@ namespace DummyClient
         {
             Console.WriteLine($"OnConnected bytes : {endPoint}");
 
-            PlayerInfoReq packet = new PlayerInfoReq() { packetId = (ushort)PacketID.PlayerInfoReq, playerId = 1001 };
+            PlayerInfoReq packet = new PlayerInfoReq() { playerId = 1001 };
 
             {
-                ArraySegment<byte> s = SendBufferHelper.Open(4096);
+                ArraySegment<byte> s = packet.Write();
 
-                ushort count = 0;
-                bool success = true;
-
-
-                // GetBytes 보다 빠른 TryWriteBytes를 사용
-                //TryWriteBytes()는 버퍼 공간이 부족할 때 실패
-                //packsize는 미리 알 수 없으므로 아래로 코드를 내린다.
-                //success &= BitConverter.TryWriteBytes(new Span<byte>(s.Array, s.Offset, s.Count), packet.size);
-                count += 2;
-                success &= BitConverter.TryWriteBytes(new Span<byte>(s.Array, s.Offset + count, s.Count - count), packet.packetId);
-                count += 2;
-                success &= BitConverter.TryWriteBytes(new Span<byte>(s.Array, s.Offset + count, s.Count - count), packet.playerId);
-                count += 8;
-
-                success &= BitConverter.TryWriteBytes(new Span<byte>(s.Array, s.Offset, s.Count), count);
-
-                ArraySegment<byte> sendBuff = SendBufferHelper.Close(count);
-
-                if (success)
-                    Send(sendBuff);
+                if (s != null)
+                    Send(s);
             }
         }
 
