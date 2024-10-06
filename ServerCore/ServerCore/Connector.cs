@@ -10,21 +10,25 @@ namespace ServerCore
 	{
 		Func<Session> _sessionFactory;
 
-		public void Connect(IPEndPoint endPoint, Func<Session> sessionFactory)
-		{
-			// 휴대폰 설정
-			Socket socket = new Socket(endPoint.AddressFamily, SocketType.Stream, ProtocolType.Tcp);
-			_sessionFactory = sessionFactory;
+        // 다수의 더미클라이언트 구현을 위해 count 변수 추가
+        public void Connect(IPEndPoint endPoint, Func<Session> sessionFactory, int count = 1)
+        {
+            for (int i = 0; i < count; i++)
+            {
+                //휴대폰 설정
+                Socket socket = new Socket(endPoint.AddressFamily, SocketType.Stream, ProtocolType.Tcp);
+                _sessionFactory = sessionFactory;
 
-			SocketAsyncEventArgs args = new SocketAsyncEventArgs();
-			args.Completed += OnConnectCompleted;
-			args.RemoteEndPoint = endPoint;
-			args.UserToken = socket;
+                SocketAsyncEventArgs args = new SocketAsyncEventArgs();
+                args.Completed += OnConnectCompleted;
+                args.RemoteEndPoint = endPoint;
+                args.UserToken = socket;
 
-			RegisterConnect(args);
-		}
+                RegisterConnect(args);
+            }
+        }
 
-		void RegisterConnect(SocketAsyncEventArgs args)
+        void RegisterConnect(SocketAsyncEventArgs args)
 		{
 			Socket socket = args.UserToken as Socket;
 			if (socket == null)

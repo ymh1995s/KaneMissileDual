@@ -7,8 +7,6 @@ using System.Threading;
 
 namespace DummyClient
 {
-	
-
 	class Program
 	{
 		static void Main(string[] args)
@@ -21,20 +19,23 @@ namespace DummyClient
 
 			Connector connector = new Connector();
 
-			connector.Connect(endPoint, () => { return new ServerSession(); });
+            //10개의 더미클라 시뮬레이션
+            connector.Connect(endPoint,
+                () => { return SessionManager.Instance.Generate(); },
+                10);
 
-			while (true)
-			{
-				try
-				{
-				}
-				catch (Exception e)
-				{
-					Console.WriteLine(e.ToString());
-				}
-
-				Thread.Sleep(100);
-			}
-		}
+            while (true)
+            {
+                try
+                {
+                    SessionManager.Instance.SendForEach();
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.ToString());
+                }
+                Thread.Sleep(250);
+            }
+        }
 	}
 }
